@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "browserify": "^10.2.4",
+    "cake-gulp": "^0.5.1",
+    "coffeeify": "^1.1.0",
+    "vinyl-buffer": "^1.0.0",
+    "watchify": "^3.2.3"
+  },
+  "dependencies": {
+    "lune": "^0.2.0",
+    "phaser": "^2.3.0"
+  }
+}
