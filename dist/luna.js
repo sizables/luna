@@ -457,13 +457,22 @@ module.exports = require('./lib/lune.js');
 })();
 
 },{}],3:[function(require,module,exports){
-var lune;
+var game, lune;
 
 lune = window.lune = require('lune');
 
-window.onload = function() {
-  return console.log(lune.phase());
-};
+console.log(lune.phase());
+
+game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, '', {
+  preload: function() {
+    return game.load.image('logo', 'luna.png');
+  },
+  create: function() {
+    var logo;
+    logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
+    return logo.anchor.setTo(0.5, 0.5);
+  }
+});
 
 
 },{"lune":1}]},{},[3])
