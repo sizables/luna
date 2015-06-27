@@ -24,8 +24,8 @@ bundle = (options, callback) ->
     .on 'error', log, 'Browserify Error'
     .pipe source 'luna.js'
     .pipe buffer()
-    .pipe sourcemaps.init loadMaps: true
-    .pipe sourcemaps.write './'
+    # .pipe sourcemaps.init loadMaps: true
+    # .pipe sourcemaps.write './'
     .pipe dest "#{__dirname}/dist"
     .pipe debug 'BUNDLE: '
 task 'build', 'Bundles all the scripts with Browserify', bundle

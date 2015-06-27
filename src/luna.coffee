@@ -1,10 +1,16 @@
-lune = window.lune = require 'lune'
+lune = require 'lune'
 console.log lune.phase()
 
-game = new Phaser.Game window.innerWidth, window.innerHeight, Phaser.AUTO, '', {
+require './gif.coffee'
+
+class Luna extends Phaser.Game
+  constructor: ->
+    unless @ instanceof Luna then return new Luna
+    @game = super window.innerWidth, window.innerHeight, Phaser.AUTO, '', @
   preload: ->
-    game.load.image 'logo', 'luna.png'
+    @game.load.crossOrigin = '*'
+    @game.load.spritegif 'm8hYEjb', 'http://i.imgur.com/m8hYEjb.gif'
+
   create: ->
-    logo = game.add.sprite game.world.centerX, game.world.centerY, 'logo'
-    logo.anchor.setTo 0.5, 0.5
-}
+
+window.game = new Luna
